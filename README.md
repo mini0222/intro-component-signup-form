@@ -10,7 +10,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-
+  - [What I learned](#What-I-learned)
 
 
 
@@ -44,3 +44,8 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - JavaScript
+
+### What I learned
+
+
+
