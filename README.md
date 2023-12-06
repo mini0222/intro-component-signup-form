@@ -88,11 +88,6 @@ In addition to meeting the challenge presented by Frontend Mentor, I personally 
     passwordInput.type = "password"
   }
 }
-
-
- 
-
- 
 ```
 
 
