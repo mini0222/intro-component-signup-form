@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins"
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins bold";
+    src: url("Poppins-Bold.ttf");
+}
+
+.container {
+    background-image: url("images/bg-intro-desktop.png");
+    background-color: hsl(0, 100%, 74%) ;
+    display: flex;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.description {
+    flex-basis: 50%;
+    padding-top: 150px;
+    padding-left: 50px;
+    padding-right: 0;
+   
+}
+
+.description h1{
+    font-family: "Poppins bold";
+    margin-bottom: 20px;
+    width: 500px;
+    font-size: 50px;
+}
+
+.subscription {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.subscription .try-message{
+    background: hsl(248, 32%, 49%);
+    padding: 15px 50px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 1px 8px 1px hsl(249, 10%, 26%, 0.3);
+}
+
+.try-message span{
+    font-family: "Poppins bold";
+}
+
+.subs-box {
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    box-shadow: 1px 8px 1px hsl(249, 10%,26%, 0.3);
+
+}
+
+.subs-box form {
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    border: none;
+    width: 85%;
+    font-weight: 700;
+
+}
+form .input-group {
+
+    padding: 15px 30px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+   
+}
+
+
+input:focus { 
+    outline: none;
+    border-color: hsl(248, 32%, 49%)
+ }
+
+.subs-box button{
+    background: hsl(154, 59%, 51%);
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 1px 2px 1px hsl(154, 43%, 39%);
+    cursor: pointer;
+}   
+
+.agree {
+    color: hsl(246, 25%, 77%);
+    text-align: center;
+    font-size: 10px;
+}
+
+.agree span{
+    color: hsl(0, 100%, 74%);
+    font-family: "Poppins bold";
+}
+
+form p {
+    color: red;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+}
+
+.input-group svg {
+    position: absolute;
+    bottom: 15px;
+    right: 17px;
+    font-size:  14px;
+    color: red;
+    display: none;
+
+}
+
+.input-group img {
+    cursor: pointer;
+
+}  
+
+@media only screen and (max-width: 375px) {
+
+ body {
+    display: flex;
+    flex-direction: column;
+
+ }
+
+ .container {
+    flex-direction: column;
+    background-image: url("images/bg-intro-mobile.png");
+    width: 375px;
+    height: 100%;
+    align-items: center;
+    gap: 60px;
+ }
+
+ .description {
+    width: 300px;
+    padding-top: 0px;
+    padding-left: 0px;
+ }
+ 
+
+ .description h1 {
+   
+    font-size: 25px;
+    width: 300px;
+    text-align: center;
+
+    
+ }
+
+ .description p {
+    text-align: center;
+
+ }
+
+ .subscription {
+    align-items: center;
+    justify-content: center;
+   
+
+
+
+}
+
+.subscription .try-message{
+    margin-bottom: 25px;
+    width: 300px;
+    
+}
+
+.subs-box {
+    width: 300px;
+    padding: 20px;
+}
+
+.agree {
+   width: 220px;
+   margin: auto;
+
+}
+
+}

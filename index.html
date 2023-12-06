@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+  
+  <div class="description">
+  <h1>Learn to code by watching others</h1>
+
+  <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+    but understanding how developers think is invaluable.</p> 
+
+  </div>
+
+  <div class="subscription">
+  <div class="try-message"><span>Try it free 7 days</span> then $20/mo. thereafter</div>
+
+  <div class="subs-box">
+  <form>
+
+  <div class="input-group">
+  <input id="first-name" placeholder="First Name">
+  <svg class="error" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+  </div>
+
+  <p id="first-name-error"></p>
+
+  <div class="input-group">
+  <input id="last-name" placeholder="Last Name">
+  <svg class="error" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+  </div>
+
+  <p id="last-name-error"></p>
+
+  <div class="input-group">
+  <input id="email" placeholder="Email Address"> 
+  <svg class="error" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+  </div>
+
+  <p id="email-error"></p>
+
+  <div class="input-group">
+  <input type="password" id="password" placeholder="Password">
+  <svg class="error" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+  <img onclick="seePassword()" src="images/eye-close.png" width="24">
+  </div>
+
+ <p id="password-error"></p>
+  
+  </form>
+
+  <button onclick="validateForm()">CLAIM YOUR FREE TRIAL</button>
+
+  <div class="agree">By clicking the button, you are agreeing to our <span>Terms and Services</span></div>
+  </div>
+
+</div>
+
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Minjeong Temechu</a>.
+    </p>
+  </footer>
+
+<script>
+  var firstNameError = document.getElementById('first-name-error');
+  var lastNameError = document.getElementById('last-name-error');
+  var emailError = document.getElementById('email-error');
+  var passwordError = document.getElementById('password-error');
+  var errorIcon = document.getElementsByClassName("error");
+  var inputGroup = document.getElementsByClassName("input-group");
+  var subsBox = document.querySelector('.subs-box');
+
+  function validateFirstName() {
+    var firstName = document.getElementById("first-name").value;
+
+    if (firstName.length == 0) {
+      firstNameError.innerHTML = "First Name cannot be empty";
+      errorIcon[0].style.display = "block";
+      inputGroup[0].style.border =  "1.5px solid red";
+      return false
+
+    }
+
+
+    firstNameError.innerHTML = "";
+    errorIcon[0].style.display = "none";
+    inputGroup[0].style.border =  "1px solid #cccccc";
+
+    return true;
+  }
+
+  function validateLastName() {
+    var lastName = document.getElementById("last-name").value;
+
+    if (lastName.length == 0) {
+      lastNameError.innerHTML = "Last Name cannot be empty";
+      errorIcon[1].style.display = "block";
+      inputGroup[1].style.border =  "1.5px solid red";
+      return false
+
+    }
+
+    lastNameError.innerHTML = "";
+    errorIcon[1].style.display = "none";
+    inputGroup[1].style.border =  "1px solid #cccccc";
+    return true;
+
+  }
+
+
+  function validateEmail() {
+    var email = document.getElementById("email").value;
+
+    if (email.length == 0 || !email.match( /^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+      emailError.innerHTML = "Looks like this is not an email";
+      errorIcon[2].style.display = "block";
+      inputGroup[2].style.border =  "1.5px solid red";
+      
+      return false;
+     
+    }
+
+    emailError.innerHTML = "";
+    errorIcon[2].style.display = "none";
+    inputGroup[2].style.border =  "1px solid #cccccc";
+    return true;
+    
+
+  }
+
+
+  function validatePassword() {
+    var password = document.getElementById("password").value;
+
+    if (password.length == 0 ){
+      passwordError.innerHTML = "Password cannot be empty";
+      errorIcon[3].style.display = "block";
+      inputGroup[3].style.border =  "1.5px solid red";
+      
+      return false;
+      
+    }
+
+    passwordError.innerHTML = "";
+    errorIcon[3].style.display = "none";
+    inputGroup[3].style.border =  "1px solid #cccccc";
+    return true;
+   
+
+
+  }
+
+  var passwordInput = document.getElementById("password");
+  var eyeIcon = document.getElementsByTagName("img")[0];
+
+ function seePassword() {
+  if(passwordInput.type == "password") {
+    eyeIcon.src = "images/eye-open.png";
+    passwordInput.type = "text"
+
+  } else {
+    eyeIcon.src = "images/eye-close.png";
+    passwordInput.type = "password"
+  }
+}
+ function validateForm() {
+  validateFirstName();
+  validateLastName();
+  validateEmail();
+  validatePassword();
+  }
+ 
+</script>
+</body>
+</html>
