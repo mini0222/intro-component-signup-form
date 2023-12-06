@@ -47,5 +47,52 @@ Users should be able to:
 
 ### What I learned
 
+I'm fascinated to learned how you can manipulate html element with javacript.  For instance, in this project, I've implemented error messages that display when the input value's length is less than zero (typically when nothing is typed into the input box) or when the input conditions for an email doesn't match with what user typed.
+
+In addition to meeting the challenge presented by Frontend Mentor, I personally included a feature. Users can now toggle the visibility of the password number using eye icons. 
+
+
+```js
+
+ function validateFirstName() {
+    var firstName = document.getElementById("first-name").value;
+
+    if (firstName.length == 0) {
+      firstNameError.innerHTML = "First Name cannot be empty";
+      errorIcon[0].style.display = "block";
+      inputGroup[0].style.border =  "1.5px solid red";
+      return false
+
+    }
+
+
+    firstNameError.innerHTML = "";
+    errorIcon[0].style.display = "none";
+    inputGroup[0].style.border =  "1px solid #cccccc";
+
+    return true;
+  }
+
+
+
+  var passwordInput = document.getElementById("password");
+  var eyeIcon = document.getElementsByTagName("img")[0];
+
+ function seePassword() {
+  if(passwordInput.type == "password") {
+    eyeIcon.src = "images/eye-open.png";
+    passwordInput.type = "text"
+
+  } else {
+    eyeIcon.src = "images/eye-close.png";
+    passwordInput.type = "password"
+  }
+}
+
+
+ 
+
+ 
+```
 
 
